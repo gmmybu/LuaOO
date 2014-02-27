@@ -1,9 +1,7 @@
 function WrapMethod(self, f)
-  local obj = {}
-  setmetatable(obj, {__call = function(_, ...)
+  return function(...)
     return f(self, ...)
-  end})
-  return obj
+  end
 end
 
 function Class(...)
