@@ -1,4 +1,4 @@
-function WrapMethod(f, self)
+function WrapMethod(self, f)
   local obj = {}
   setmetatable(obj, {__call = function(_, ...)
     return f(self, ...)
@@ -37,7 +37,7 @@ function Class(...)
     setmetatable(obj, {__index = function(self, key)
       local value = class[key]
       if type(value) == 'function' then
-        self[key] = WrapMethod(value, self)
+        self[key] = WrapMethod(self, value)
       else
         self[key] = value
       end
