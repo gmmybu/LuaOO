@@ -3,6 +3,8 @@ LuaOO
 
 Lua OO use Python Class Style, support mixin
 
-Create Class like @middleclass
+code style similar to @middleclass
 
-and call member function use x.func() instead of x:func()
+call member function use x.func() instead of x:func()
+
+poor english, sorry
