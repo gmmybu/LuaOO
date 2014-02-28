@@ -18,10 +18,11 @@ function Class(...)
     
     --enable __index
     for i = 1, #proto do
-        local value = proto[i][key]
-        if value then
+      local value = proto[i][key]
+      if value then
         return value
       end
+    end
   end,
   
   __call = function(_, ...)
